@@ -1,0 +1,90 @@
+:root {
+  --toolbar-height: 60px;
+  --editor-title-height: 32px;
+  --mobile-breakpoint: 768px;
+  --tablet-breakpoint: 1024px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: #1e1e1e;
+}
+
+#root {
+  height: 100%;
+}
+
+/* Responsive Resizer styles */
+.Resizer {
+  background: #333;
+  opacity: 0.2;
+  z-index: 1;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  -moz-background-clip: padding;
+  -webkit-background-clip: padding;
+  background-clip: padding-box;
+}
+
+.Resizer:hover {
+  opacity: 1;
+  transition: all 0.2s ease;
+}
+
+.Resizer.vertical {
+  width: 11px;
+  margin: 0 -5px;
+  border-left: 5px solid rgba(255, 255, 255, 0);
+  border-right: 5px solid rgba(255, 255, 255, 0);
+  cursor: col-resize;
+}
+
+.Resizer.horizontal {
+  height: 11px;
+  margin: -5px 0;
+  border-top: 5px solid rgba(255, 255, 255, 0);
+  border-bottom: 5px solid rgba(255, 255, 255, 0);
+  cursor: row-resize;
+}
+
+.Resizer.vertical:hover,
+.Resizer.horizontal:hover {
+  border-color: rgba(0, 0, 0, 0.5);
+}
+
+/* Mobile Responsive Styles */
+@media (max-width: 768px) {
+  .Resizer {
+    display: none;
+  }
+  
+  :root {
+    --toolbar-height: 50px;
+    --editor-title-height: 28px;
+  }
+}
+
+/* Tablet Responsive Styles */
+@media (min-width: 769px) and (max-width: 1024px) {
+  :root {
+    --toolbar-height: 55px;
+    --editor-title-height: 30px;
+  }
+} 
